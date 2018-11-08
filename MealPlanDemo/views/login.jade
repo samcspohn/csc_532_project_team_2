@@ -1,0 +1,14 @@
+extends layout
+block content
+    h3.field.regheader #{title}
+    form.regform(method='post')
+        p.mess #{message}
+        div.item
+            label.label(for='username') Username
+            input(type='text',placeholder='Please Input username',id='username',name='username')
+        div.item
+            label.label(for='password') Password
+            input(type='password',placeholder='Please Input password',id='password',name='password')
+        div.item
+            label.label
+            input(type='submit' id='sub',name='sub' value='Login')

@@ -1,0 +1,44 @@
+extends layout
+block content
+    h3.field.regheader #{title}
+    form.regform(method='post')
+        p.mess #{message}
+        if isNew
+            div.item
+                label.label(for='targetWeight') Weight
+                input(type='text',placeholder='Input Weight',id='targetWeight',name='targetWeight')
+            div.item
+                label.label(for='targetCalorie') Calorie
+                input(type='text',placeholder='Input Calorie',id='targetCalorie',name='targetCalorie')
+            div.item
+                label.label(for='targetFat') Fat
+                input(type='text',placeholder='Input Fat',id='targetFat',name='targetFat')
+            div.item
+                label.label(for='targetCarbohydrate') Carbohydrate
+                input(type='text',placeholder='Input Carbohydrate',id='targetCarbohydrate',name='targetCarbohydrate')            
+            div.item
+                label.label(for='targetProtein') Protein
+                input(type='text',placeholder='Input Protein',id='targetProtein',name='targetProtein')            
+            div.item
+                label.label
+                input(type='submit' id='sub',name='sub' value='Set')
+        else
+            each val in posts
+                div.item
+                    label.label(for='targetWeight') Weight
+                    input(type='text',placeholder='Input Weight',id='targetWeight',name='targetWeight',value='#{val.Weight}')
+                div.item
+                    label.label(for='targetCalorie') Calorie
+                    input(type='text',placeholder='Input Calorie',id='targetCalorie',name='targetCalorie',value='#{val.Calorie}')
+                div.item
+                    label.label(for='targetFat') Fat
+                    input(type='text',placeholder='Input Fat',id='targetFat',name='targetFat',value='#{val.Fat}')
+                div.item
+                    label.label(for='targetCarbohydrate') Carbohydrate
+                    input(type='text',placeholder='Input Carbohydrate',id='targetCarbohydrate',name='targetCarbohydrate',value='#{val.carbohydrate}')            
+                div.item
+                    label.label(for='targetProtein') Protein
+                    input(type='text',placeholder='Input Protein',id='targetProtein',name='targetProtein',value='#{val.Protein}')            
+                div.item
+                    label.label
+                    input(type='submit' id='sub',name='sub' value='Set')

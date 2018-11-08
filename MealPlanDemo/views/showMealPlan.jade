@@ -1,0 +1,17 @@
+extends layout
+block content
+    main.main
+        section.intro
+            h3 Meal Plan:
+        section.show
+          if posts
+            each val in posts
+                article.col
+                    h3.author BaseMeal_name:
+                    p
+                        | #{val.BaseMeal_name}
+          article.col  
+            form.regform(method='post')
+              h3.author
+                input(type='submit' id='sub',name='sub' value='Make')
+

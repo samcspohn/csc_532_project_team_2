@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+      nav.header
+          ul.list
+              li.logo
+                  a(href='/') MealPlan
+              li
+                  a(href='/') HomePage
+              li
+                  a(href='/login') Login
+              li
+                  a(href='/setGoal') Set Goal
+              li
+                  a(href='/showMealPlan') Show Meal Plan
+       div.container
+           block content
+           hr
+           footer.footer
+               p
+                   a(href='/') For CSC532 Group 2
+                   | @2018

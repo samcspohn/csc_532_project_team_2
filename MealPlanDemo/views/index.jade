@@ -1,0 +1,28 @@
+extends layout
+block content
+    main.main
+        section.intro
+            if message
+                h3.indexmes #{message}
+            if success&&user
+                h1.welcome #{success} Welcome #{user['idUser']} to MealPlanPage
+            else if !success&&user
+                h1.welcome Welcome #{user['idUser']} to MealPlanPage
+            else
+                h1.welcome Welcome to MealPlanPage
+            h3.tech User can set Goals or check Meal Plan on this website.
+            p.btnlist
+                if user
+                    a.login(href='/logout') Logout
+                    a.showMealPlan(href='/showMealPlan') Show Meal Plan
+                    a.setGoal(href='/setGoal') Set Goal
+                else
+                    a.login(href='/login') Login
+        section.show
+          if posts
+            each val in posts
+                article.col
+                    h3.author Meal Plan:#{val.idBaseMeal} is
+                    p
+                        | #{val.BaseMeal_name}
+            
